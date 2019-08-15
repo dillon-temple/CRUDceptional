@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="top_container">
+    <h1>Welcome to CRUDelicious</h1>
+    <div class="Header_Bar">
+        <h2>Check out some recent dishes</h2>
+        <a class="button add" href="/add">Add a dish</a>
+    </div>
+</div>
+@model List<Dish>
+
+<div class="Dish_list">
+    @for(int i = Model.Count - 1; i >= 0; i--){
+    <div class="Dish_item"><a href="@Model[i].Id">@Model[i].Name</a> by @Model[i].Chef</div>
+    }
+</div>
